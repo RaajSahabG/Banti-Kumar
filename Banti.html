@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banti Kumar - Computer Education Expert</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#3b82f6", secondary: "#10b981" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: 'Poppins', sans-serif;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.masonry-grid {
+column-count: 3;
+column-gap: 1rem;
+}
+.masonry-grid-item {
+break-inside: avoid;
+margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+.masonry-grid {
+column-count: 2;
+}
+}
+@media (max-width: 640px) {
+.masonry-grid {
+column-count: 1;
+}
+}
+.timeline-item:not(:last-child)::before {
+content: '';
+position: absolute;
+left: 0.5rem;
+top: 1.5rem;
+bottom: -1.5rem;
+width: 2px;
+background-color: #e5e7eb;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+border: 2px solid #3b82f6;
+border-radius: 4px;
+cursor: pointer;
+}
+.custom-checkbox.checked::after {
+content: '';
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-checkbox.checked {
+background-color: #3b82f6;
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch-input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.custom-switch-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.custom-switch-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+.custom-switch-input:checked + .custom-switch-slider {
+background-color: #3b82f6;
+}
+.custom-switch-input:checked + .custom-switch-slider:before {
+transform: translateX(26px);
+}
+.lightbox {
+display: none;
+position: fixed;
+z-index: 1000;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.9);
+align-items: center;
+justify-content: center;
+}
+.lightbox-content {
+max-width: 90%;
+max-height: 90%;
+}
+.lightbox-close {
+position: absolute;
+top: 20px;
+right: 20px;
+color: white;
+font-size: 30px;
+cursor: pointer;
+}
+.counter {
+display: inline-block;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Section -->
+<header class="relative">
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-white shadow-md">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="https://sanceducation.com/" class="text-2xl font-['Pacifico'] text-primary">Sanc</a>
+<!-- Desktop Menu -->
+<div class="hidden md:flex space-x-6">
+<a href="#home" class="text-gray-700 hover:text-primary font-medium transition-colors">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary font-medium transition-colors">About</a>
+<a href="#centers" class="text-gray-700 hover:text-primary font-medium transition-colors">Centers</a>
+<a href="#achievements" class="text-gray-700 hover:text-primary font-medium transition-colors">Achievements</a>
+<a href="#gallery" class="text-gray-700 hover:text-primary font-medium transition-colors">Gallery</a>
+<a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden w-10 h-10 flex items-center justify-center">
+<button id="mobile-menu-button" class="text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+<div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+<a href="#home" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">About</a>
+<a href="#centers" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Centers</a>
+<a href="#achievements" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Achievements</a>
+<a href="#gallery" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Gallery</a>
+<a href="#contact" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<div id="home" class="w-full h-screen pt-16 relative" style="background-image: url('https://readdy.ai/api/search-image?query=A%20professional%20modern%20office%20setting%20with%20a%20subtle%20gradient%20blue%20background.%20The%20image%20shows%20a%20clean%2C%20minimalist%20workspace%20with%20computer%20equipment%20and%20educational%20materials%20arranged%20neatly.%20The%20lighting%20is%20soft%20and%20professional%2C%20creating%20an%20atmosphere%20of%20expertise%20and%20knowledge.%20The%20left%20side%20has%20a%20clean%2C%20simple%20background%20perfect%20for%20text%20overlay%2C%20while%20the%20right%20side%20shows%20more%20detailed%20workspace%20elements&width=1920&height=1080&seq=123456&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+<div class="container mx-auto px-4 h-full flex items-center">
+<div class="w-full md:w-1/2 z-10">
+<div class="flex items-center gap-8 mb-8">
+<div class="w-48 h-48 rounded-full overflow-hidden border-4 border-primary/20">
+<img src="/imgs/bnti.jpeg" alt="Banti Kumar" class="w-full h-full object-cover">
+</div>
+<div>
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Banti Kumar</h1>
+<div class="flex items-center mb-2">
+<div class="h-1 w-20 bg-primary mr-4"></div>
+<div id="animated-text" class="text-xl text-gray-700 font-medium">Computer Education Expert</div>
+</div>
+</div>
+</div>
+<p class="text-gray-700 mb-8 max-w-lg">Dedicated to excellence in computer education and committed to fostering integrity through leadership in anti-corruption initiatives across Agra.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#contact" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Get in Touch</a>
+<a href="#about" class="border-2 border-primary text-primary px-6 py-3 !rounded-button font-medium hover:bg-primary/10 transition-colors whitespace-nowrap">Learn More</a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+<div class="h-1 w-20 bg-primary mx-auto"></div>
+</div>
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<h3 class="text-2xl font-semibold text-gray-800 mb-4">Professional Background</h3>
+<p class="text-gray-700 mb-6">With over 10 years of experience in computer education, I've dedicated my career to empowering students with essential digital skills. As the founder and director of multiple computer education centers across Agra, I've helped thousands of students build successful careers in technology.</p>
+<p class="text-gray-700 mb-6">Beyond education, I serve as the Vice President of the Anti Corruption & Crime Control Committee in Agra, where I work diligently to promote transparency and ethical practices in our community.</p>
+<p class="text-gray-700">My teaching philosophy centers on practical, hands-on learning that prepares students for real-world challenges. I believe in creating inclusive learning environments where students of all backgrounds can thrive.</p>
+</div>
+<div class="w-full md:w-1/2">
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+<i class="ri-computer-line ri-xl text-primary"></i>
+</div>
+<h4 class="text-xl font-semibold text-gray-800 mb-2">Computer Education</h4>
+<p class="text-gray-600">Expert in teaching computer fundamentals, programming, and digital literacy skills.</p>
+</div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+<i class="ri-government-line ri-xl text-primary"></i>
+</div>
+<h4 class="text-xl font-semibold text-gray-800 mb-2">Anti-Corruption Work</h4>
+<p class="text-gray-600">Leading initiatives to promote transparency and integrity in public institutions.</p>
+</div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+<i class="ri-building-4-line ri-xl text-primary"></i>
+</div>
+<h4 class="text-xl font-semibold text-gray-800 mb-2">Center Management</h4>
+<p class="text-gray-600">Successfully managing multiple education centers with excellent student outcomes.</p>
+</div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+<i class="ri-team-line ri-xl text-primary"></i>
+</div>
+<h4 class="text-xl font-semibold text-gray-800 mb-2">Community Leadership</h4>
+<p class="text-gray-600">Actively involved in community development and educational outreach programs.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Statistics -->
+<div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="text-center p-6 bg-white rounded shadow-sm">
+<div class="text-4xl font-bold text-primary mb-2">
+<span class="counter" data-target="10">0</span>+
+</div>
+<p class="text-gray-700">Years Experience</p>
+</div>
+<div class="text-center p-6 bg-white rounded shadow-sm">
+<div class="text-4xl font-bold text-primary mb-2">
+<span class="counter" data-target="5000">0</span>+
+</div>
+<p class="text-gray-700">Students Taught</p>
+</div>
+<div class="text-center p-6 bg-white rounded shadow-sm">
+<div class="text-4xl font-bold text-primary mb-2">
+<span class="counter" data-target="4">0</span>
+</div>
+<p class="text-gray-700">Centers Managed</p>
+</div>
+<div class="text-center p-6 bg-white rounded shadow-sm">
+<div class="text-4xl font-bold text-primary mb-2">
+<span class="counter" data-target="12">0</span>
+</div>
+<p class="text-gray-700">Awards Received</p>
+</div>
+
+<div class="text-center p-6 bg-white rounded shadow-sm">
+    <div class="text-4xl font-bold text-primary mb-2">
+    <span class="counter" data-target="1200">0</span>
+    </div>
+    <p class="text-gray-700">Students Placed</p>
+    </div>
+</div>
+</div>
+</section>
+<!-- Centers Section -->
+<section id="centers" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Our Education Centers</h2>
+<div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Discover our network of computer education centers across Agra, each equipped with modern facilities and expert instructors.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Center 1 -->
+<div class="bg-white rounded overflow-hidden shadow-sm transition-transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="./imgs/rajpur.jpeg" alt="Main Center" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Digital Excellence Center</h3>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Rajpur Chungi, Agra</p>
+</div>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-book-open-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Programming, Web Development, Office Applications</p>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-user-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Strength: 120 students</p>
+</div>
+<a href="#contact" class="inline-block bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Contact Center</a>
+</div>
+</div>
+<!-- Center 2 -->
+<div class="bg-white rounded overflow-hidden shadow-sm transition-transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="./imgs/bagichi.jpeg" alt="Taj View Center" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Sanc Education</h3>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Kotli BaghichiDeori Road, Agra</p>
+</div>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-book-open-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Digital Marketing, Advanced Computing, Basic Computing</p>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-user-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Strength: 180 students</p>
+</div>
+<a href="#contact" class="inline-block bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Contact Center</a>
+</div>
+</div>
+<!-- Center 3 -->
+<div class="bg-white rounded overflow-hidden shadow-sm transition-transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="/imgs//Sikandra.jpeg" alt="Sikandra Center" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Sanc Education</h3>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Sikandra, Agra</p>
+</div>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-book-open-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Computer Fundamentals, Hardware Training, Advanced Courses</p>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-user-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Strength: 160 students</p>
+</div>
+<a href="#contact" class="inline-block bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Contact Center</a>
+</div>
+</div>
+<!-- Center 4 -->
+<div class="bg-white rounded overflow-hidden shadow-sm transition-transform hover:scale-105">
+<div class="h-48 overflow-hidden">
+<img src="/imgs/gwalior.jpeg" alt="Kamla Nagar Center" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Sanc Education</h3>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Gopal Pura Gwalior, Agra</p>
+</div>
+<div class="flex items-start mb-3">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-book-open-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Computer Courses, Advanced Computer Caurses</p>
+</div>
+<div class="flex items-start mb-4">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5">
+<i class="ri-user-line"></i>
+</div>
+<p class="ml-2 text-gray-600">Strength: 90 students</p>
+</div>
+<a href="#contact" class="inline-block bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Contact Center</a>
+</div>
+</div>
+
+</section>
+<!-- Achievements Section -->
+<section id="achievements" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Achievements & Recognition</h2>
+<div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">A journey marked by dedication to education and community service.</p>
+</div>
+<!-- Timeline -->
+<div class="max-w-3xl mx-auto mb-20">
+<div class="relative">
+<!-- Timeline Item 1 -->
+<div class="timeline-item relative pl-10 pb-10">
+<div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary"></div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="text-sm text-primary font-medium mb-2">April 2022</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Appointed Vice President of Anti Corruption & Crime Control Committee</h3>
+<p class="text-gray-700">Recognized for integrity and leadership in promoting transparency across Agra.</p>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="timeline-item relative pl-10 pb-10">
+<div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary"></div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="text-sm text-primary font-medium mb-2">November 2022</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Excellence in Education Award</h3>
+<p class="text-gray-700">Awarded by the Uttar Pradesh State Education Department for contributions to computer literacy.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="timeline-item relative pl-10 pb-10">
+<div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary"></div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="text-sm text-primary font-medium mb-2">June 2024</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Expanded to 4 Education Centers</h3>
+<p class="text-gray-700">Successfully scaled operations to reach more students across different areas of Agra.</p>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="timeline-item relative pl-10 pb-10">
+<div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary"></div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="text-sm text-primary font-medium mb-2">March 2021</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Community Service Recognition</h3>
+<p class="text-gray-700">Honored for providing free computer training to underprivileged students.</p>
+</div>
+</div>
+<!-- Timeline Item 5 -->
+<div class="timeline-item relative pl-10">
+<div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary"></div>
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="text-sm text-primary font-medium mb-2">January 2020</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">Founded First Computer Education Center</h3>
+<p class="text-gray-700">Established the first center in MAdhu Nagar, Agra with a vision to empower students with digital skills.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Anti Corruption Committee Role -->
+<div class="bg-gray-50 p-8 rounded shadow-sm mb-16">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/3">
+<img src="/imgs/corruption.jpeg" alt="Anti Corruption Committee" class="w-full h-auto rounded">
+</div>
+<div class="w-full md:w-2/3">
+<h3 class="text-2xl font-semibold text-gray-800 mb-4">Anti Corruption & Crime Control Committee</h3>
+<p class="text-gray-700 mb-4">As the Vice President of the Anti Corruption & Crime Control Committee in Agra, I lead initiatives to promote transparency, accountability, and ethical practices across public and private sectors.</p>
+<p class="text-gray-700 mb-4">Our committee works closely with local government bodies, educational institutions, and community organizations to raise awareness about corruption and implement preventive measures.</p>
+<p class="text-gray-700">Key achievements include establishing an anonymous reporting system, conducting awareness workshops in schools and colleges, and successfully mediating several high-profile corruption cases.</p>
+</div>
+</div>
+</div>
+<!-- Testimonials -->
+<h3 class="text-2xl font-semibold text-gray-800 text-center mb-8">What People Say</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-double-quotes-l ri-2x"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6">Sanc's teaching methods are exceptional. His ability to simplify complex concepts made my computer learning journey enjoyable and effective.</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
+<img src="/imgs/office.jpeg" alt="Vikram Malhotra" class="w-full h-full object-cover">
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-semibold text-gray-800">Vishal Raj</h4>
+<p class="text-gray-600">Software Developer</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-double-quotes-l ri-2x"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6">The anti-corruption workshops conducted by Banti Sir at our college were eye-opening. His passion for creating an ethical society is truly inspiring and has motivated many students to become more vigilant citizens.</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20middle-aged%20Indian%20female%20professor%20with%20glasses%20in%20formal%20attire%2C%20neutral%20background%2C%20looking%20directly%20at%20camera%20with%20a%20warm%20smile&width=100&height=100&seq=test2&orientation=squarish" alt="Dr. Priya Agarwal" class="w-full h-full object-cover">
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-semibold text-gray-800">Dr. Priya Agarwal</h4>
+<p class="text-gray-600">Professor, St. John's College</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-gray-50 p-6 rounded shadow-sm">
+<div class="flex items-center mb-4">
+<div class="text-primary">
+<i class="ri-double-quotes-l ri-2x"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6">I'm grateful for Banti Sir's dedication to providing quality computer education. My daughter has gained valuable skills that have opened numerous opportunities for her future career.</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20an%20Indian%20businessman%20in%20his%2050s%20wearing%20a%20suit%2C%20neutral%20background%2C%20looking%20directly%20at%20camera%20with%20a%20confident%20expression&width=100&height=100&seq=test3&orientation=squarish" alt="Rajesh Kumar" class="w-full h-full object-cover">
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-semibold text-gray-800">Rajesh Kumar</h4>
+<p class="text-gray-600">Business Owner</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Gallery</h2>
+<div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Explore moments from our education centers, award ceremonies, and community initiatives.</p>
+</div>
+<!-- Gallery Filters -->
+<div class="flex flex-wrap justify-center gap-4 mb-10">
+<button class="gallery-filter active bg-primary text-white px-4 py-2 !rounded-button font-medium whitespace-nowrap" data-filter="all">All</button>
+<!-- <button class="gallery-filter bg-white text-gray-700 px-4 py-2 !rounded-button font-medium hover:bg-gray-100 whitespace-nowrap" data-filter="centers">Center Inaugurations</button> -->
+<button class="gallery-filter bg-white text-gray-700 px-4 py-2 !rounded-button font-medium hover:bg-gray-100 whitespace-nowrap" data-filter="awards">Award Ceremonies</button>
+<button class="gallery-filter bg-white text-gray-700 px-4 py-2 !rounded-button font-medium hover:bg-gray-100 whitespace-nowrap" data-filter="teaching">Teaching Moments</button>
+<button class="gallery-filter bg-white text-gray-700 px-4 py-2 !rounded-button font-medium hover:bg-gray-100 whitespace-nowrap" data-filter="committee">Committee Work</button>
+</div>
+<!-- Gallery Grid -->
+<div class="masonry-grid">
+<!-- Image 1 -->
+<div class="masonry-grid-item gallery-item" data-category="awards">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/1.jpeg" alt="Center Inauguration" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Sikandra Center Inauguration</h4>
+<p>Opening ceremony of our state-of-the-art facility in Sikandra, Agra</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 2 -->
+<div class="masonry-grid-item gallery-item" data-category="teaching">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/2.jpeg" alt="Teaching Session" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Advanced Workshop</h4>
+<p>Guiding students through complex Computer concepts</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="masonry-grid-item gallery-item" data-category="awards">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/3.jpeg" alt="Award Ceremony" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Excellence in Education Award</h4>
+<p>Receiving recognition from the State Education Department</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 4 -->
+<div class="masonry-grid-item gallery-item" data-category="awards">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/4.jpeg" alt="Committee Meeting" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Anti Corruption Committee Meeting</h4>
+<p>Leading discussions on transparency initiatives</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 5 -->
+<div class="masonry-grid-item gallery-item" data-category="teaching">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/5.jpeg" alt="Graduation Ceremony" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Events</h4>
+<p>Celebrating the success of our First batch</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 6 -->
+<div class="masonry-grid-item gallery-item" data-category="teaching">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/10.jpeg" alt="Computer Lab" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Events</h4>
+<p>Staff Birthday Celebration</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 7 -->
+<div class="masonry-grid-item gallery-item" data-category="teaching">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/7.jpeg" alt="Anti-Corruption Workshop" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Celebrating Children's Day</h4>
+<p>Educating college students about transparency and ethics</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 8 -->
+<div class="masonry-grid-item gallery-item" data-category="committee">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/annual.jpeg" alt="Award Gala" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Advertising</h4>
+<p>Sanc Education Across Agra</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Image 9 -->
+<div class="masonry-grid-item gallery-item" data-category="committee">
+<div class="relative overflow-hidden rounded cursor-pointer group">
+<img src="/imgs/9.jpeg" alt="Hardware Workshop" class="w-full h-auto">
+<div class="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<div class="text-white text-center p-4">
+<h4 class="text-lg font-semibold mb-2">Hardware Training Session</h4>
+<p>Practical workshop on computer assembly and maintenance</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+<span class="lightbox-close">&times;</span>
+<img class="lightbox-content" id="lightbox-img">
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+<div class="h-1 w-20 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-700 max-w-2xl mx-auto">Have questions about our education centers or services? Reach out to us.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-1/2">
+<form class="bg-gray-50 p-8 rounded shadow-sm">
+<h3 class="text-2xl font-semibold text-gray-800 mb-6">Send a Message</h3>
+<div class="mb-6">
+<label for="name" class="block text-gray-700 mb-2">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Your name">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Your email">
+</div>
+<div class="mb-6">
+<label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Your phone number">
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-gray-700 mb-2">Subject</label>
+<select id="subject" class="w-full px-4 py-2 pr-8 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50 appearance-none bg-white" style="background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polyline points=\"6 9 12 15 18 9\"></polyline></svg>'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1em;">
+<option value="">Select a subject</option>
+<option value="course-inquiry">Course Inquiry</option>
+<option value="center-information">Center Information</option>
+<option value="anti-corruption">Anti-Corruption Committee</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Your message"></textarea>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Send Message</button>
+</form>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="bg-gray-50 p-8 rounded shadow-sm mb-8">
+<h3 class="text-2xl font-semibold text-gray-800 mb-6">Contact Information</h3>
+<div class="flex items-start mb-6">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-1">Main Office</h4>
+<p class="text-gray-700">Rajpur Chungi, Shamshabad Road Agra, Uttar Pradesh, India - 282001</p>
+</div>
+</div>
+<div class="flex items-start mb-6">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-1">Phone</h4>
+<p class="text-gray-700">+91 8006268909 (Office)</p>
+<p class="text-gray-700">+91 8307042805 (Emergency)</p>
+</div>
+</div>
+<div class="flex items-start mb-6">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-1">Email</h4>
+<p class="text-gray-700">Sanceducation.com</p>
+
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary">
+<i class="ri-time-line ri-lg"></i>
+</div>
+<div class="ml-4">
+<h4 class="text-lg font-semibold text-gray-800 mb-1">Coaching Hours</h4>
+<p class="text-gray-700">Monday - Saturday: 7:00 AM - 6:00 PM</p>
+<p class="text-gray-700">Sunday: Closed</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-8 rounded shadow-sm">
+<h3 class="text-xl font-semibold text-gray-800 mb-4">Connect With Us</h3>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/people/Sanc-Computer-Education-Centre/100095374360613/" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="https://www.linkedin.com/in/banti-kumar-2b790b292/?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAEb4V-sBwvGeSUGj4fvwX-rAwyBxmKEMbyQ" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="https://www.instagram.com/sanc_computer_center/" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="https://www.youtube.com/@Sanc_Computer" class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+<i class="ri-youtube-fill"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<a href="https://sanceducation.com/" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Sanc</a>
+<p class="text-gray-400 mb-6">Empowering students with digital skills and promoting integrity through education and leadership.</p>
+<div class="flex space-x-4">
+<a href="https://www.facebook.com/people/Sanc-Computer-Education-Centre/100095374360613/" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="https://www.linkedin.com/in/banti-kumar-2b790b292/?miniProfileUrn=urn%3Ali%3Afsd_profile%3AACoAAEb4V-sBwvGeSUGj4fvwX-rAwyBxmKEMbyQ" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="https://www.instagram.com/sanc_computer_center/" class="text-gray-400 hover:text-white transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#centers" class="text-gray-400 hover:text-white transition-colors">Centers</a></li>
+<li><a href="#achievements" class="text-gray-400 hover:text-white transition-colors">Achievements</a></li>
+<li><a href="#gallery" class="text-gray-400 hover:text-white transition-colors">Gallery</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Our Centers</h3>
+<ul class="space-y-2">
+<li><a href="https://www.google.com/maps/place/27%C2%B008'52.7%22N+78%C2%B002'15.8%22E/@27.1479606,78.0351583,17z/data=!3m1!4b1!4m4!3m3!8m2!3d27.1479606!4d78.0377332?hl=en&entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D" class="text-gray-400 hover:text-white transition-colors">Rajpur Chungi</a></li>
+<li><a href="" class="text-gray-400 hover:text-white transition-colors">Gopal Pura</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sikandra</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Deori Road Bagichi</a></li>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to our newsletter for updates on courses and events.</p>
+<form class="flex">
+<input type="email" placeholder="Your email" class="px-4 py-2 w-full border-none rounded-l focus:outline-none text-gray-900">
+<button type="submit" class="bg-primary text-white px-4 py-2 !rounded-r-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 Banti Kumar. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js">
+</script>
+<script>
+// Mobile Menu Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  mobileMenuButton.addEventListener("click", function () {
+    mobileMenu.classList.toggle("hidden");
+    if (
+      mobileMenuButton.querySelector("i").classList.contains("ri-menu-line")
+    ) {
+      mobileMenuButton.querySelector("i").classList.remove("ri-menu-line");
+      mobileMenuButton.querySelector("i").classList.add("ri-close-line");
+    } else {
+      mobileMenuButton.querySelector("i").classList.remove("ri-close-line");
+      mobileMenuButton.querySelector("i").classList.add("ri-menu-line");
+    }
+  });
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu.querySelectorAll("a");
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      mobileMenu.classList.add("hidden");
+      mobileMenuButton.querySelector("i").classList.remove("ri-close-line");
+      mobileMenuButton.querySelector("i").classList.add("ri-menu-line");
+    });
+  });
+});
+// Animated Text Rotation
+document.addEventListener("DOMContentLoaded", function () {
+  const animatedText = document.getElementById("animated-text");
+  const texts = [
+    "Computer Education Expert",
+    "Vice President",
+    "Anti Corruption & Crime Control Committee",
+    "Educational Center Director",
+  ];
+  let currentIndex = 0;
+  function changeText() {
+    animatedText.style.opacity = "0";
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % texts.length;
+      animatedText.textContent = texts[currentIndex];
+      animatedText.style.opacity = "1";
+    }, 500);
+  }
+  setInterval(changeText, 3000);
+});
+// Counter Animation
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".counter");
+  const speed = 200;
+  const animateCounters = () => {
+          counters.forEach((counter) => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText.replace(/\D/g, "");
+            const increment = target / speed;
+            if (count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(animateCounters, 1);
+            } else {
+              counter.innerText = target;
+            }
+          });
+        }; // Correctly closed function
+  // Check if element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  // Start animation when counters are in viewport
+  function checkCounters() {
+    if (counters.length > 0 && isInViewport(counters[0])) {
+      animateCounters();
+      window.removeEventListener("scroll", checkCounters);
+    }
+  }
+  window.addEventListener("scroll", checkCounters);
+  checkCounters(); // Check on page load
+});
+// Gallery Filtering
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".gallery-filter");
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Update active button
+      filterButtons.forEach((btn) => {
+        btn.classList.remove("active", "bg-primary", "text-white");
+        btn.classList.add("bg-white", "text-gray-700", "hover:bg-gray-100");
+      });
+      this.classList.add("active", "bg-primary", "text-white");
+      this.classList.remove("bg-white", "text-gray-700", "hover:bg-gray-100");
+      const filter = this.getAttribute("data-filter");
+      galleryItems.forEach((item) => {
+        if (filter === "all" || item.getAttribute("data-category") === filter) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+});
+// Lightbox
+document.addEventListener("DOMContentLoaded", function () {
+  const galleryItems = document.querySelectorAll(".gallery-item");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxClose = document.querySelector(".lightbox-close");
+  galleryItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const imgSrc = this.querySelector("img").src;
+      lightboxImg.src = imgSrc;
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+  });
+  lightboxClose.addEventListener("click", function () {
+    lightbox.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+});
+// Smooth scrolling for anchor links
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
